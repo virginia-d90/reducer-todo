@@ -23,6 +23,11 @@ function App() {
     e.preventDefault();
     dispatch({type: "TOGGLE_COMPLETED", payload:item.id})
   }
+
+  const clearCompleted = e => {
+    e.preventDefault();
+    dispatch({type: "CLEAR_COMPLETED"})
+  }
   
   return(
     <div className="App">
@@ -43,6 +48,7 @@ function App() {
           <Todo key={task.id} task={task} toggle={toggle} />
         ))}
       </div>
+      <button onClick={clearCompleted}>Clear</button>
 
     </div>
   )
