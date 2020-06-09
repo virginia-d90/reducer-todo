@@ -19,6 +19,10 @@ function App() {
     setNewTodoText('')
   }
 
+  const toggle = (e, item) =>{
+    e.preventDefault();
+    dispatch({type: "TOGGLE_COMPLETED", payload:item.id})
+  }
   
   return(
     <div className="App">
@@ -36,7 +40,7 @@ function App() {
       </form>
       <div className='tasks-list'>
         {state.map(task => (
-          <Todo key={task.id} task={task.item} />
+          <Todo key={task.id} task={task} toggle={toggle} />
         ))}
       </div>
 
