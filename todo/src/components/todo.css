@@ -1,0 +1,6 @@
+html{
+    background-color: gray;
+}
+.task.completed{
+    text-decoration: line-through;
+}
